@@ -9,11 +9,7 @@ import OrderDetails from './Screens/OrderDetails';
 const Stack = createStackNavigator();
 
 const App = () => {
-  const [isOnline, setIsOnline] = useState(true);
 
-  const toggleOnlineStatus = () => {
-    setIsOnline(!isOnline);
-  };
 
   return (
     <NavigationContainer>

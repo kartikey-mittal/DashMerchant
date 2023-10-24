@@ -2,6 +2,8 @@ import { SafeAreaView, StatusBar, Dimensions } from 'react-native';
 import NavBarOrder from '../components/OrderDetails/NavBarOrder';
 import OrderStatus from '../components/OrderDetails/OrderStatus';
 
+import Card from '../components/Home/Card';
+
 const OrderDetails = () => {
 
     return (
@@ -10,6 +12,7 @@ const OrderDetails = () => {
             <StatusBar backgroundColor="#131927" barStyle="light-content" />
             <NavBarOrder />
             <OrderStatus />
+            <Card />
         </SafeAreaView>
     );
 };
