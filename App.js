@@ -1,27 +1,57 @@
 import React, { useState } from 'react';
-import { Text } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import OrderDetails from './Screens/OrderDetails';
-
+import OrderPage from './Screens/OrderPage';
+import BottomTabBar from './components/BottomTabBar';
+import Home from './Screens/HomeScreen';
+import Catalogue from './Screens/Catalogue';
+import Support from './Screens/Support';
+import Test from './Screens/Test';
 
 const Stack = createStackNavigator();
 
-const App = () => {
+export default function App() {
+  const [currentScreen, setCurrentScreen] = useState('Home');
 
+  let ScreenComponent;
+  switch (currentScreen) {
+    case 'Orders':
+      ScreenComponent = OrderPage;
+      break;
+    case 'Catalogue':
+      ScreenComponent = Catalogue;
+      break;
+    case 'Support':
+      ScreenComponent = Support;
+      break;
+    case 'Test':
+      ScreenComponent = Test;
+      break;
+    default:
+      ScreenComponent = Home;
+  }
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="OrderDetails" screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="OrderDetails" component={OrderDetails} />
-
-
-
-      </Stack.Navigator>
-    </NavigationContainer>
-
+    <View style={styles.container}>
+      <View style={styles.screenContainer}>
+        <ScreenComponent />
+      </View>
+      <BottomTabBar onTabPress={setCurrentScreen} currentTab={currentScreen} />
+    </View>
   );
 };
 
-export default App;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  screenContainer: {
+    flex: 1,
+  },
+});
+
+
+
