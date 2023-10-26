@@ -1,5 +1,5 @@
 import { SafeAreaView, StatusBar, Dimensions } from 'react-native';
-import NavBarOrder from '../components/OrderDetails/NavBarOrder';
+import NavBarOrder from '../components/OrderTypes/NavBarOrder';
 import OrderStatus from '../components/OrderDetails/OrderStatus';
 
 import Card from '../components/Home/Card';
