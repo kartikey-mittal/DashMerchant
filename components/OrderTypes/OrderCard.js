@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text ,TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 const OrderCard = () => {
@@ -14,7 +14,8 @@ const OrderCard = () => {
                 borderRadius: 10,
                 borderWidth: 0.4,
                 borderColor: '#ead0d0',
-                elevation: 1
+                elevation: 2,
+                
             }}>
             {/* First Row */}
             <View
@@ -131,9 +132,10 @@ const OrderCard = () => {
 
             <View style={{ flex: 0.2, borderTopColor: '#ead0d0', borderTopWidth: 1, marginTop: 5, justifyContent: 'center', alignContent: 'center' }}>
 
-                <View style={{ borderColor: '#ead0d0', flex: 0.75, width: '95%', alignSelf: 'center', borderWidth: 1, borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                <TouchableOpacity style={{ borderColor: '#ead0d0', flex: 0.75, width: '95%', alignSelf: 'center', borderWidth: 1, borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={{ color: '#3a3737' }}>View More</Text>
-                </View>
+                </TouchableOpacity>
+                
             </View>
 
         </View >
