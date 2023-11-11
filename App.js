@@ -45,6 +45,7 @@ export default function App() {
     </View>
   );
 };
+//APP.JS PAGE
 
 const styles = StyleSheet.create({
   container: {
