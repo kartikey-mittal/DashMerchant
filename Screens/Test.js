@@ -13,7 +13,7 @@ const Test = () => {
         <View style={{ backgroundColor: '#f6f6f6', flex: 1 }}>
 
             {/* <Text>TEST SCREEN</Text> */}
-            <Catalogue/>
+            <LoginScreen/>
             
 
 

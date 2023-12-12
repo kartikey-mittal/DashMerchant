@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
           fontSize: 18,
         },
         paginationStyle: {
-                top: 360, // Adjust the top value based on your layout
+                top: 400, // Adjust the top value based on your layout
                 alignItems: 'center',
                 justifyContent: 'center',
               },
