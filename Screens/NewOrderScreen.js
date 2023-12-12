@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import NavBarOrder from '../../components/OrderTypes/NavBarOrder';
-import OrderCard from '../../components/OrderTypes/OrderCard';
+import NavBarOrder from '../components/OrderTypes/NavBarOrder';
+import OrderCard from '../components/OrderTypes/OrderCard';
 import { ScrollView } from 'react-native';
 
 const NewOrderScreen = () => {

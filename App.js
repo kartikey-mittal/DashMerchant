@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import OrderDetails from './Screens/OrderDetails';
+
 import OrderPage from './Screens/OrderPage';
 import BottomTabBar from './components/BottomTabBar';
 import Home from './Screens/HomeScreen';
@@ -16,7 +16,7 @@ import Test from './Screens/Test';
 const Stack = createStackNavigator();
 
 export default function App() {
-  const [currentScreen, setCurrentScreen] = useState('Home');
+  const [currentScreen, setCurrentScreen] = useState('Test');
 
   let ScreenComponent;
   switch (currentScreen) {

@@ -1,14 +1,57 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View } from 'react-native';
 
-const Catalogue = () => {
+import { SafeAreaView, StatusBar, Dimensions } from 'react-native';
+// import { useState } from 'react';
+import NavBarCatalogue from '../components/Catalogue/NavBarCatalogue';
+
+import SearchBarCatalogue from '../components/Catalogue/SearchBarCatalogue';
+import CatalogueCategory from '../components/Catalogue/CatalogueCategory';
+
+import CatalogueItemCard from '../components/Catalogue/CatalogueItemCard';
+const { width } = Dimensions.get('window');
+
+
+const items = [
+    {
+      title: 'Chocolate',
+      price: 'Rs 40',
+      discountPrice: 'Rs 50',
+      image: 'https://www.freepngimg.com/thumb/grocery/53973-6-grocery-free-hq-image.png',
+    },
+    {
+      title: 'Candy',
+      price: 'Rs 20',
+      discountPrice: 'Rs 25',
+      image: 'https://www.freepngimg.com/thumb/grocery/53973-6-grocery-free-hq-image.png',
+    },
+    // Add more items here
+  ];
+
+const StoreScreen = () => {
+    // const [selectedCategory, setSelectedCategory] = useState(null);
     return (
-        <View>
-            <Text>CATALOGUE SCREEN</Text>
-        </View>
+        <SafeAreaView style={{ flex: 1,backgroundColor:'#f2f2f2' }}>
+            <StatusBar backgroundColor="#131927" barStyle="light-content" />
+            
+            <NavBarCatalogue storeName="Bigbasket" />
+            <SearchBarCatalogue/>
+            <CatalogueCategory/>
+
+            {items.map((item, index) => (
+        <CatalogueItemCard
+          key={index}
+          title={item.title}
+          price={item.price}
+          discountPrice={item.discountPrice}
+          image={item.image}
+        />
+      ))}
+            
+
+            {/* Rest of your screen components go here */}
+        </SafeAreaView>
     );
-}
+};
 
-const styles = StyleSheet.create({})
-
-export default Catalogue;
+export default StoreScreen;
