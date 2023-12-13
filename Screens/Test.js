@@ -4,6 +4,11 @@ import NewOrderScreen from './NewOrderScreen';
 import OrderScreen from './OrderScreen';
 import Catalogue from './Catalogue';
 import LoginScreen from './Loginscreenone';
+import LoginscreenTwo from './Loginscreentwo';
+import ShopDetails from './Shopdetails'; 
+import ShopCategory from './Shopcategory';
+
+
 
 
 
@@ -13,7 +18,7 @@ const Test = () => {
         <View style={{ backgroundColor: '#f6f6f6', flex: 1 }}>
 
             {/* <Text>TEST SCREEN</Text> */}
-            <LoginScreen/>
+            <ShopDetails/>
             
 
 
