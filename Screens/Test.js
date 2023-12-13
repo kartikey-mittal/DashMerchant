@@ -16,8 +16,7 @@ const Test = () => {
             {/* <Text>TEST SCREEN</Text> */}
           
           
-          <ShopCategory/>
-
+        <ShopCategory/>
 
 
         </View>
