@@ -7,6 +7,7 @@ import LoginScreen from './Loginscreenone';
 import LoginscreenTwo from './Loginscreentwo';
 import ShopDetails from './ShopDetails';
 import ShopCategory from './ShopCategory';
+import ThankYouScreen from './DetailsSubmitted';
 
 
 const Test = () => {
@@ -16,7 +17,7 @@ const Test = () => {
             {/* <Text>TEST SCREEN</Text> */}
           
           
-        <ShopCategory/>
+        <ThankYouScreen/>
 
 
         </View>
