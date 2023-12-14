@@ -8,6 +8,9 @@ import LoginscreenTwo from './Loginscreentwo';
 import ShopDetails from './ShopDetails';
 import ShopCategory from './ShopCategory';
 import ThankYouScreen from './DetailsSubmitted';
+import TimeIn from './ShopDetailstwo';
+import TimeInputScreen from './ShopDetailstwo';
+
 
 
 const Test = () => {
@@ -17,7 +20,7 @@ const Test = () => {
             {/* <Text>TEST SCREEN</Text> */}
           
           
-        <ThankYouScreen/>
+        <TimeInputScreen/>
 
 
         </View>
