@@ -20,7 +20,7 @@ const ShopCategory = () => {
   ];
 
   return (
-    <View>
+    <View style={{marginBottom:100}}>
       <Text style={styles.heading}>Select Shop Category</Text>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.gridContainer}>

@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width,
-    height: 650,
+    height: 500,
     resizeMode: 'cover',
   },
   indicatorsContainer: {

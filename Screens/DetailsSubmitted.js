@@ -18,7 +18,7 @@ const ThankYouScreen = () => {
         style={styles.chatButton}
       >
         <Icon name="chat-outline" size={25} color="blue" style={{ marginRight: 10 }} />
-        <Text style={styles.buttonText}>CHAT WITH US</Text>
+        <Text style={styles.buttonText}>Enter V-Code</Text>
       </TouchableOpacity>
     </View>
   );
