@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Alert } from 'react-native';
 
-const ShopDetails = () => {
+const ShopDetailstwo = () => {
   const [startHour, setStartHour] = useState('');
   const [startMinute, setStartMinute] = useState('');
   const [startPeriod, setStartPeriod] = useState('AM');
@@ -235,4 +235,4 @@ alignItems:"center",
   },
 });
 
-export default ShopDetails;
+export default ShopDetailstwo;
