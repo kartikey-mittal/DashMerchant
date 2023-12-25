@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import FontLoader from '../../FontLoader';
 
 
 const OrderDetails = () => {
@@ -28,9 +29,10 @@ const OrderDetails = () => {
   };
 
   return (
+    <FontLoader>
     <View style={styles.container}>
       {/* Delivery Details Section*/}
-      <Text style={styles.mainHead}>Delivery Details</Text>
+      <Text style={styles.mainHead }>Delivery Details</Text>
       <View style={styles.section}>
         <Text style={styles.text}>{deliveryDetails.deliveryDate}</Text>
         <Text style={styles.text}>{deliveryDetails.deliveryTime}</Text>
@@ -69,6 +71,7 @@ const OrderDetails = () => {
         </View>
       </View>
     </View>
+    </FontLoader>
   );
 };
 
@@ -79,11 +82,13 @@ const styles = StyleSheet.create({
   mainHead: {
     color: 'grey',
     marginBottom: 8,
+    fontFamily:"DMSansR"
   },
   text: {
     marginVertical: 2,
     marginHorizontal: 2,
     color: 'grey',
+    fontFamily:"DMSansR"
   },
   section: {
     backgroundColor: 'white',

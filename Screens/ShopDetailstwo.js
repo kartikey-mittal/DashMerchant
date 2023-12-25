@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Alert } from 'react-native';
+import FontLoader from '../FontLoader';
 
 const ShopDetailstwo = () => {
   const [startHour, setStartHour] = useState('');
@@ -38,6 +39,7 @@ const ShopDetailstwo = () => {
   };
 
   return (
+    <FontLoader>
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.heading}>Enter Shop Details</Text>
 
@@ -142,6 +144,7 @@ const ShopDetailstwo = () => {
         <Text style={styles.buttonText}>Save Details</Text>
       </TouchableOpacity>
     </ScrollView>
+    </FontLoader>
   );
 };
 
@@ -153,12 +156,14 @@ const styles = StyleSheet.create({
   },
   headblow: {
     fontSize: 15,
+    fontFamily:"DMSansR"
   },
   heading: {
     fontSize: 35,
     fontWeight: 'bold',
     marginBottom: 35,
     marginTop: 30,
+    fontFamily:"DMSansR"
   },
   inputContainer: {
     marginBottom: 20,
@@ -167,6 +172,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 14,
     marginBottom: 10,
+    fontFamily:"DMSansR"
   },
   input: {
     height: 40,
@@ -185,6 +191,7 @@ const styles = StyleSheet.create({
   timeSeparator: {
     fontSize: 20,
     marginHorizontal: 5,
+    fontFamily:"DMSansR"
   },
   periodDropdown: {
     height: 40,
@@ -232,6 +239,7 @@ alignItems:"center",
   buttonText: {
     color: '#fff',
     fontSize: 18,
+    fontFamily:"DMSansR"
   },
 });
 

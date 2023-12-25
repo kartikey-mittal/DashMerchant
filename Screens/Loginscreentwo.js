@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import FontLoader from '../FontLoader';
  
 const LoginscreenTwo = () => {
   const [otp, setOtp] = useState(['', '', '', '']); // Array to store OTP in 4 boxes
@@ -39,6 +40,7 @@ const LoginscreenTwo = () => {
   };
  
   return (
+    <FontLoader>
     <View style={styles.container}>
       <Text style={styles.heading}>Enter OTP</Text>
       <Text style={styles.headtext}>OTP is needed for verification</Text>
@@ -60,6 +62,7 @@ const LoginscreenTwo = () => {
         <Text style={styles.buttonText}>Verify OTP</Text>
       </TouchableOpacity>
     </View>
+    </FontLoader>
   );
 };
  
@@ -70,17 +73,20 @@ const styles = StyleSheet.create({
     marginLeft:40
   },
   headtext:{
-        fontSize:18
+        fontSize:18,
+        fontFamily:"DMSansR"
   },
   headtexttwo:{
         marginTop:70,
         color:"grey",
-        fontSize:13
+        fontSize:13,
+        fontFamily:"DMSansR"
   },
   heading: {
     fontSize: 38,
     marginBottom: 20,
-    fontWeight:"800"
+    fontWeight:"800",
+    fontFamily:"DMSansR"
   },
  
   button: {
@@ -95,6 +101,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 18,
+    fontFamily:"DMSansR"
   },
   otpContainer: {
         flexDirection: 'row',

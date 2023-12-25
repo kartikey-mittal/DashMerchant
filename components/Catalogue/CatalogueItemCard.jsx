@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import FontLoader from '../../FontLoader';
 
 const CatalogueItemCard = ({ title, price, discountPrice, image }) => {
     const [showDropdown, setShowDropdown] = useState(false);
@@ -16,6 +17,7 @@ const CatalogueItemCard = ({ title, price, discountPrice, image }) => {
     };
 
     return (
+        <FontLoader>
         <View
             style={{
                 flexDirection: 'row',
@@ -44,15 +46,16 @@ const CatalogueItemCard = ({ title, price, discountPrice, image }) => {
                 />
             </View>
             <View style={{ flex: 1, marginLeft: 10 }}>
-                <Text style={{ fontSize: 15, fontWeight: '500' }}>{title}</Text>
+                <Text style={{ fontSize: 15, fontWeight: '500' ,fontFamily:"DMSansR"}}>{title}</Text>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={{ fontSize: 14, color: 'black' }}>{price}/-</Text>
+                    <Text style={{ fontSize: 14, color: 'black' ,fontFamily:"DMSansR"}}>{price}/-</Text>
                     <Text
                         style={{
                             fontSize: 13,
                             color: '#a9a9a9',
                             textDecorationLine: 'line-through',
                             marginLeft: 5,
+                            fontFamily:"DMSansR"
                         }}
                     >
                         {discountPrice}
@@ -73,7 +76,7 @@ const CatalogueItemCard = ({ title, price, discountPrice, image }) => {
                     }}
                     onPress={handleDropdownClick}
                 >
-                    <Text style={{ fontSize: 16 }}>{selectedOption}</Text>
+                    <Text style={{ fontSize: 16 ,fontFamily:"DMSansR"}}>{selectedOption}</Text>
                     <MaterialIcons name="keyboard-arrow-down" size={24} color="black" />
                     {showDropdown && (
                         <View
@@ -88,10 +91,10 @@ const CatalogueItemCard = ({ title, price, discountPrice, image }) => {
                             }}
                         >
                             <TouchableOpacity onPress={() => handleOptionClick('1Kg')}>
-                                <Text style={{ fontSize: 16 }}>1Kg</Text>
+                                <Text style={{ fontSize: 16 ,fontFamily:"DMSansR"}}>1Kg</Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => handleOptionClick('2Kg')}>
-                                <Text style={{ fontSize: 16 }}>2Kg</Text>
+                                <Text style={{ fontSize: 16,fontFamily:"DMSansR" }}>2Kg</Text>
                             </TouchableOpacity>
                         </View>
                     )}
@@ -111,9 +114,10 @@ const CatalogueItemCard = ({ title, price, discountPrice, image }) => {
                     width: 60
                 }}
             >
-                <Text style={{ color: '#131927', fontSize: 14, }}>EDIT</Text>
+                <Text style={{ color: '#131927', fontSize: 14,fontFamily:"DMSansR" }}>EDIT</Text>
             </TouchableOpacity>
         </View>
+        </FontLoader>
     );
 };
 

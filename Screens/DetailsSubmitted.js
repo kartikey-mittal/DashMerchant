@@ -2,9 +2,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import FontLoader from '../FontLoader';
 
 const ThankYouScreen = () => {
   return (
+    <FontLoader>
     <View style={styles.container}>
       <Icon name="check-circle" size={50} color="green" style={{ marginBottom: 30 }} />
       <Text style={styles.heading}>Thank You!</Text>
@@ -21,6 +23,7 @@ const ThankYouScreen = () => {
         <Text style={styles.buttonText}>Enter V-Code</Text>
       </TouchableOpacity>
     </View>
+    </FontLoader>
   );
 };
 
@@ -35,18 +38,21 @@ const styles = StyleSheet.create({
     fontSize: 35,
     fontWeight: 'bold',
     marginBottom: 20,
+    fontFamily:"DMSansR"
   },
   message: {
     fontSize: 18,
     textAlign: 'center',
     marginBottom: 20,
+    fontFamily:"DMSansR"
   },
   messagebtm: {
     fontSize: 15,
     width: '70%',
     textAlign: 'center',
     marginBottom: 50,
-    marginTop:200
+    marginTop:200,
+    fontFamily:"DMSansR"
   },
   chatButton: {
     backgroundColor: 'white',
@@ -62,7 +68,8 @@ const styles = StyleSheet.create({
     color: 'blue',
     textAlign: 'center',
     fontSize: 16,
-    fontWeight:"500"
+    fontWeight:"500",
+    fontFamily:"DMSansR"
   },
 });
 

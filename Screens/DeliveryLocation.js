@@ -2,10 +2,12 @@ import React from 'react';
 import { TextInput } from 'react-native';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import FontLoader from '../FontLoader';
 
 
 const DeliveryLocation = () => {
   return (
+    <FontLoader>
     <View>
       {/* Updated header with blue background color */}
       <View
@@ -15,7 +17,7 @@ const DeliveryLocation = () => {
           padding: 1,
           backgroundColor: '#3498db', // Blue color
           height: '60px',
-          marginTop:60
+          marginTop:35
         }}
       >
         {/* Updated TouchableOpacity with 80% width and centered */}
@@ -40,7 +42,7 @@ const DeliveryLocation = () => {
             marginLeft:20
           }}
         >
-          <Text style={{ fontSize: 15, color: 'white', fontWeight: '800' }}>
+          <Text style={{ fontSize: 15, color: 'white', fontWeight: '800' ,fontFamily:"DMSansSB"}}>
             Select Delivery Location
           </Text>
         </TouchableOpacity>
@@ -74,11 +76,12 @@ const DeliveryLocation = () => {
             }}
           >
             <Icon name="search" size={20} color="black" />
-            <TextInput placeholder="Search for your society" style={{ marginLeft: 10 }} />
+            <TextInput placeholder="Search for your society" style={{ marginLeft: 10 ,fontFamily:"DMSansSB",width:200}} />
           </View>
         </View>
       </View>
     </View>
+    </FontLoader>
   );
 };
 

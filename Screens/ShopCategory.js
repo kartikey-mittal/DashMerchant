@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet, ScrollView } from 'react-native';
+import FontLoader from '../FontLoader';
 
 const ShopCategory = () => {
   const categories = [
@@ -20,6 +21,7 @@ const ShopCategory = () => {
   ];
 
   return (
+    <FontLoader>
     <View style={{marginBottom:100}}>
       <Text style={styles.heading}>Select Shop Category</Text>
       <ScrollView contentContainerStyle={styles.container}>
@@ -33,6 +35,7 @@ const ShopCategory = () => {
         </View>
       </ScrollView>
     </View>
+    </FontLoader>
   );
 };
 
@@ -49,6 +52,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 34,
     marginLeft: 20,
+    fontFamily:"DMSansR"
   },
   gridContainer: {
     flexDirection: 'row',
@@ -74,6 +78,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#040D12',
     color: '#fff',
     textAlign: 'center',
+    fontFamily:"DMSansR"
   },
 });
 

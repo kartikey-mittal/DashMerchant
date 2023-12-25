@@ -9,6 +9,7 @@ import SearchBarCatalogue from '../components/Catalogue/SearchBarCatalogue';
 import CatalogueCategory from '../components/Catalogue/CatalogueCategory';
 
 import CatalogueItemCard from '../components/Catalogue/CatalogueItemCard';
+import FontLoader from '../FontLoader';
 const { width } = Dimensions.get('window');
 
 
@@ -31,6 +32,7 @@ const items = [
 const StoreScreen = () => {
     // const [selectedCategory, setSelectedCategory] = useState(null);
     return (
+      <FontLoader>
         <SafeAreaView style={{ flex: 1,backgroundColor:'#f2f2f2' }}>
             <StatusBar backgroundColor="#131927" barStyle="light-content" />
             
@@ -46,11 +48,13 @@ const StoreScreen = () => {
           discountPrice={item.discountPrice}
           image={item.image}
         />
+        
       ))}
             
 
             {/* Rest of your screen components go here */}
         </SafeAreaView>
+        </FontLoader>
     );
 };
 

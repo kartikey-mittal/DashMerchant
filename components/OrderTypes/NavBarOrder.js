@@ -1,15 +1,17 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'; // replace with your actual icon component
+import FontLoader from '../../FontLoader';
 
 const NavBarOrder = ({ title, onBackPress, onSecondIconPress, backIconName, secondIconName }) => {
     return (
+        <FontLoader>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 10, backgroundColor: '#131927', }}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <TouchableOpacity onPress={onBackPress}>
                     <Icon name={backIconName} size={35} color="white" />
                 </TouchableOpacity>
-                <Text style={{ fontSize: 20, color: 'white', marginLeft: 10 }}>{title}</Text>
+                <Text style={{ fontSize: 20, color: 'white', marginLeft: 10 ,fontFamily:"DMSans"}}>{title}</Text>
             </View>
             <View style={{ flexDirection: 'row' }}>
                 <TouchableOpacity onPress={onSecondIconPress}>
@@ -17,6 +19,7 @@ const NavBarOrder = ({ title, onBackPress, onSecondIconPress, backIconName, seco
                 </TouchableOpacity>
             </View>
         </View>
+        </FontLoader>
     );
 };
 

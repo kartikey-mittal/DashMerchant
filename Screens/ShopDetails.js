@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import FontLoader from '../FontLoader';
  
 const ShopDetails = () => {
   const [shopName, setShopName] = useState('');
@@ -22,6 +23,7 @@ const ShopDetails = () => {
   };
  
   return (
+    <FontLoader>
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.heading}>Enter Details</Text>
       <Text style={styles.headblow}>Provide business details to get you started</Text>
@@ -70,6 +72,7 @@ const ShopDetails = () => {
         <Text style={styles.buttonText}>Save Details</Text>
       </TouchableOpacity>
     </ScrollView>
+    </FontLoader>
   );
 };
  
@@ -80,13 +83,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   headblow:{
-        fontSize:15
+        fontSize:15,
+        fontFamily:"DMSansR"
   },
   heading: {
     fontSize: 35,
     fontWeight: 'bold',
     marginBottom: 20,
-    marginTop:30
+    marginTop:30,
+    fontFamily:"DMSansR"
   },
   inputContainer: {
     marginBottom: 20,
@@ -95,6 +100,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     marginBottom: 10,
+    fontFamily:"DMSansR"
   },
   givinginputs:{
         marginTop:20
@@ -117,6 +123,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 18,
+    fontFamily:"DMSansB"
   },
 });
  

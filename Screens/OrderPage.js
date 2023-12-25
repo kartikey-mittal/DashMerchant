@@ -4,12 +4,14 @@ import Card from "../components/Home/Card";
 import { SafeAreaView, StatusBar, View } from 'react-native';
 import NavBar from "../components/Home/NavBar";
 import DispatchCard from "../components/Home/DispatchCard";
+import FontLoader from "../FontLoader";
 
 
 // hi
 
 const OrderPage = () => {
     return (
+        <FontLoader>
         <SafeAreaView>
             <StatusBar backgroundColor="#131927" barStyle="light-content" />
             <NavBar />
@@ -34,6 +36,7 @@ const OrderPage = () => {
             </View>
 
         </SafeAreaView>
+        </FontLoader>
 
     )
 }

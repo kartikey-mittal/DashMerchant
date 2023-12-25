@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Image, FlatList, StyleSheet, Dimensions ,TouchableOpacity} from 'react-native';
+import FontLoader from '../FontLoader';
 
 const LoginScreen = () => {
   const [mobileNumber, setMobileNumber] = useState('');
@@ -35,6 +36,7 @@ const LoginScreen = () => {
   }, []);
 
   return (
+    <FontLoader>
     <View style={styles.container}>
       <View style={styles.topmostcontainer}>
         {/* Image Slider */}
@@ -84,6 +86,7 @@ const LoginScreen = () => {
         <Text style={styles.buttonText}>Get OTP</Text>
       </TouchableOpacity>
     </View>
+    </FontLoader>
   );
 };
 
@@ -121,6 +124,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     marginBottom: 10,
+    fontFamily:"DMSansR"
   },
   input: {
     width: '80%',
@@ -144,6 +148,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 18,
+    fontFamily:"DMSansR"
   },
 });
 
