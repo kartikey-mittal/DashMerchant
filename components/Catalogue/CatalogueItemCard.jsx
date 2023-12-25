@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import FontLoader from '../../FontLoader';
-
+//
 const CatalogueItemCard = ({ title, price, discountPrice, image }) => {
     const [showDropdown, setShowDropdown] = useState(false);
     const [selectedOption, setSelectedOption] = useState('500gms');
@@ -46,7 +46,7 @@ const CatalogueItemCard = ({ title, price, discountPrice, image }) => {
                 />
             </View>
             <View style={{ flex: 1, marginLeft: 10 }}>
-                <Text style={{ fontSize: 15, fontWeight: '500' ,fontFamily:"DMSansR"}}>{title}</Text>
+                <Text style={{ fontSize: 15, fontWeight: '500' ,fontFamily:"DMSansSB"}}>{title}</Text>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                     <Text style={{ fontSize: 14, color: 'black' ,fontFamily:"DMSansR"}}>{price}/-</Text>
                     <Text

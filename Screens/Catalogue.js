@@ -19,12 +19,14 @@ const items = [
       price: 'Rs 40',
       discountPrice: 'Rs 50',
       image: 'https://www.freepngimg.com/thumb/grocery/53973-6-grocery-free-hq-image.png',
+      weight:'5KG'
     },
     {
       title: 'Candy',
       price: 'Rs 20',
       discountPrice: 'Rs 25',
       image: 'https://www.freepngimg.com/thumb/grocery/53973-6-grocery-free-hq-image.png',
+      weight:'5KG'
     },
     // Add more items here
   ];
@@ -47,6 +49,7 @@ const StoreScreen = () => {
           price={item.price}
           discountPrice={item.discountPrice}
           image={item.image}
+          weight={item.weight}
         />
         
       ))}

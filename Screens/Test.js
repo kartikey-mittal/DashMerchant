@@ -10,6 +10,7 @@ import ShopCategory from './ShopCategory';
 import ThankYouScreen from './DetailsSubmitted';
 import ShopDetailstwo from './ShopDetailstwo';
 import DeliveryLocation from './DeliveryLocation';
+import EditCatalouge from './EditCatalouge';
 
 
 
@@ -20,8 +21,8 @@ const Test = () => {
 
             {/* <Text>TEST SCREEN</Text> */}
           
-          
-        <ShopDetails/>
+          <EditCatalouge/>
+        
 
 
         </View>
