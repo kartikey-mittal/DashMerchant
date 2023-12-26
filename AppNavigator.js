@@ -24,10 +24,10 @@ const AppNavigator = () => {
         return (
       
           <NavigationContainer>
-            <Stack.Navigator initialRouteName="Catalogue" screenOptions={{ headerShown: false }}>
+            <Stack.Navigator initialRouteName="OrderPage" screenOptions={{ headerShown: false }}>
               <Stack.Screen name="Home" component={HomeScreen} />
               <Stack.Screen name="OrderPage" component={OrderPage} />
-              <Stack.Screen name="BottomTabBar" component={BottomTabBar} />
+              {/* <Stack.Screen name="BottomTabBar" component={BottomTabBar} /> */}
               <Stack.Screen name="Catalogue" component={Catalogue} />
               <Stack.Screen name="EditCatalouge" component={EditCatalouge} />
               <Stack.Screen name="Support" component={Support} />

@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import FontLoader from '../FontLoader';
 
-const EditCatalouge = () => {
+const EditCatalouge = ({route}) => {
   const [Item, setItem] = useState('');
   const [mrp, setMRP] = useState('');
   const [sp, setSP] = useState('');
-  const [weight, setWeight] = useState('');
+  const [itemweight, setWeight] = useState('');
   const [barcode, setBarcode] = useState('');
 
-
+  const { id, title,price,discountPrice,image,weight } = route.params;
 
   const handleSubmit = () => {
     // Implement your submission logic here
   };
 
-  const IMG_URI = "https://cdn.pixabay.com/photo/2020/05/26/15/42/eagle-5223559_960_720.jpg";
+  const IMG_URI = image;
 
   return (
     <FontLoader>
@@ -29,7 +29,7 @@ const EditCatalouge = () => {
 
         <Text style={styles.label}>Item</Text>
         <TextInput
-          value={Item}
+          value={title}
           onChangeText={(text) => setItem(text)}
           style={styles.input}
           placeholder='Enter your Item...'
@@ -38,8 +38,9 @@ const EditCatalouge = () => {
         <View style={styles.rowContainer}>
           <View style={styles.numericInputContainer}>
             <Text style={styles.label}>MRP</Text>
+            
             <TextInput
-              value={mrp}
+              value={price}
               onChangeText={(text) => setMRP(text)}
               keyboardType="numeric"
               style={styles.input}
@@ -50,7 +51,7 @@ const EditCatalouge = () => {
           <View style={styles.numericInputContainer}>
             <Text style={styles.label}>SP</Text>
             <TextInput
-              value={sp}
+              value={discountPrice}
               onChangeText={(text) => setSP(text)}
               keyboardType="numeric"
               style={styles.input}
@@ -69,7 +70,7 @@ const EditCatalouge = () => {
 
         <Text style={styles.label}>Barcode</Text>
         <TextInput
-          value={barcode}
+          value={id}
           onChangeText={(text) => setBarcode(text)}
           style={styles.input}
           placeholder='Enter Barcode of Item...'
@@ -116,6 +117,7 @@ const styles = StyleSheet.create({
     marginBottom: 25,
     width: '100%',
     borderRadius: 10,
+    marginLeft: 5, color: 'rgb(132 132 132)', width: '100%' ,fontFamily:"DMSansSB",backgroundColor:'white'
   },
   rowContainer: {
     flexDirection: 'row',

@@ -13,12 +13,19 @@ const CatalogueItemCard = ({ id, title, price, discountPrice, image, weight }) =
   // Find the cart item corresponding to the current CatalogueItemCard
 //   const cartItem = cartItems.find((item) => item.id === id);
 
-
+   const navigation = useNavigation();
 
   const dispatch=useDispatch()
   const handleEditClick=(item)=>{
-    
-  }
+    navigation.navigate('EditCatalouge', {
+      id:id,
+      title:title,
+      price:price,
+      discountPrice:discountPrice,
+      image:image,
+      weight:weight
+    });
+  };
 
   return (
     <FontLoader>

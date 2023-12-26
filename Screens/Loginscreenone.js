@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, Image, FlatList, StyleSheet, Dimensions ,TouchableOpacity} from 'react-native';
+import { View, Text, TextInput, Image, FlatList, StyleSheet, Dimensions ,TouchableOpacity, ScrollView} from 'react-native';
 import FontLoader from '../FontLoader';
 
 const LoginScreen = () => {
@@ -37,6 +37,7 @@ const LoginScreen = () => {
 
   return (
     <FontLoader>
+      <ScrollView style ={{marginBottom:10}}>
     <View style={styles.container}>
       <View style={styles.topmostcontainer}>
         {/* Image Slider */}
@@ -86,6 +87,7 @@ const LoginScreen = () => {
         <Text style={styles.buttonText}>Get OTP</Text>
       </TouchableOpacity>
     </View>
+    </ScrollView>
     </FontLoader>
   );
 };
@@ -96,6 +98,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F9F9FB',
+    marginBottom:10
   },
   topmostcontainer: {
     marginTop: 0,
