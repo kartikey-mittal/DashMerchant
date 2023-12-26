@@ -9,9 +9,7 @@ const EditCatalouge = () => {
   const [weight, setWeight] = useState('');
   const [barcode, setBarcode] = useState('');
 
-  const handleImageSelection = () => {
-    // Implement image selection logic here
-  };
+
 
   const handleSubmit = () => {
     // Implement your submission logic here

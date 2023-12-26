@@ -1,60 +1,16 @@
-import React, { useState } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import React, { useEffect } from 'react';
+import { Provider } from 'react-redux';
+import store from './redux/store/store';
+import MainContainer from './MainContainer';
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
-import OrderPage from './Screens/OrderPage';
-import BottomTabBar from './components/BottomTabBar';
-import Home from './Screens/HomeScreen';
-import Catalogue from './Screens/Catalogue';
-import Support from './Screens/Support';
-import Test from './Screens/Test';
-
-
-
-const Stack = createStackNavigator();
-
-export default function App() {
-  const [currentScreen, setCurrentScreen] = useState('Test');
-
-  let ScreenComponent;
-  switch (currentScreen) {
-    case 'Orders':
-      ScreenComponent = OrderPage;
-      break;
-    case 'Catalogue':
-      ScreenComponent = Catalogue;
-      break;
-    case 'Support':
-      ScreenComponent = Support;
-      break;
-    case 'Test':
-      ScreenComponent = Test;
-      break;
-    default:
-      ScreenComponent = Home;
-  }
+const App = () => {
+ 
 
   return (
-    <View style={styles.container}>
-      <View style={styles.screenContainer}>
-        <ScreenComponent />
-      </View>
-      <BottomTabBar onTabPress={setCurrentScreen} currentTab={currentScreen} />
-    </View>
+    <Provider store={store}>
+      <MainContainer />
+      </Provider>
   );
 };
-//APP.JS PAGE
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  screenContainer: {
-    flex: 1,
-  },
-});
-
-
-
+export default App;

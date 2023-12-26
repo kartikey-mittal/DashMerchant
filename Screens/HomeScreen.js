@@ -9,7 +9,7 @@ import FontLoader from "../FontLoader";
 
 
 
-const Home = () => {
+const HomeScreen = () => {
     return (
         <FontLoader>
         <SafeAreaView>
@@ -40,4 +40,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default HomeScreen;

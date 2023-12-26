@@ -1,6 +1,4 @@
 import React from 'react';
-import { View } from 'react-native';
-
 import { SafeAreaView, StatusBar, Dimensions } from 'react-native';
 // import { useState } from 'react';
 import NavBarCatalogue from '../components/Catalogue/NavBarCatalogue';
@@ -15,6 +13,7 @@ const { width } = Dimensions.get('window');
 
 const items = [
     {
+      id:1,
       title: 'Chocolate',
       price: 'Rs 40',
       discountPrice: 'Rs 50',
@@ -22,6 +21,7 @@ const items = [
       weight:'5KG'
     },
     {
+      id:2,
       title: 'Candy',
       price: 'Rs 20',
       discountPrice: 'Rs 25',
