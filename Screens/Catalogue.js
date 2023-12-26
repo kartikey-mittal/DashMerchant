@@ -1,4 +1,7 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
+import { View, FlatList, ActivityIndicator, Text, } from 'react-native';
+import { Client, Databases, Query } from 'appwrite'; // Import the Query module
 import { SafeAreaView, StatusBar, Dimensions } from 'react-native';
 // import { useState } from 'react';
 import NavBarCatalogue from '../components/Catalogue/NavBarCatalogue';

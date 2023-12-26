@@ -1,0 +1,9 @@
+// loginreducer.js
+
+const initialState = "";
+//
+const catalogueReducer = (state = initialState, action) => {
+        
+};
+
+export default catalogueReducer;
