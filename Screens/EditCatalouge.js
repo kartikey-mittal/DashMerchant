@@ -38,25 +38,18 @@ const EditCatalouge = ({route}) => {
         <View style={styles.rowContainer}>
           <View style={styles.numericInputContainer}>
             <Text style={styles.label}>MRP</Text>
-            
-            <TextInput
-              value={price}
-              onChangeText={(text) => setMRP(text)}
-              keyboardType="numeric"
-              style={styles.input}
-              placeholder='₹ Enter MRP of Item...'
-            />
+            <View style={{height:45,width:"90%",backgroundColor:"white",borderRadius:10,borderWidth:0.5,flexDirection:"row",alignItems:"center",alignContent:"center",marginLeft:10}}>
+            <Text style={{color:"black",fontSize:20,justifyContent:"center",fontWeight:"800",marginLeft:10}}>₹</Text>
+            <TextInput placeholder='Enter MRP' style={{marginLeft:10,borderBottomWidth:0.2,borderColor:"grey"}}></TextInput>
+          </View>
           </View>
 
           <View style={styles.numericInputContainer}>
             <Text style={styles.label}>SP</Text>
-            <TextInput
-              value={discountPrice}
-              onChangeText={(text) => setSP(text)}
-              keyboardType="numeric"
-              style={styles.input}
-              placeholder='₹ Enter SP of Item...'
-            />
+            <View style={{height:45,width:"90%",backgroundColor:"white",borderRadius:10,borderWidth:0.8,flexDirection:"row",alignItems:"center",alignContent:"center"}}>
+            <Text style={{color:"black",fontSize:20,justifyContent:"center",fontWeight:"800",marginLeft:10}}>₹</Text>
+            <TextInput placeholder='Enter SP' style={{marginLeft:10,borderBottomWidth:0.2,borderColor:"grey"}}></TextInput>
+          </View>
           </View>
         </View>
 
@@ -117,7 +110,8 @@ const styles = StyleSheet.create({
     marginBottom: 25,
     width: '100%',
     borderRadius: 10,
-    marginLeft: 5, color: 'rgb(132 132 132)', width: '100%' ,fontFamily:"DMSansSB",backgroundColor:'white'
+    marginLeft: 5, color: 'rgb(132 132 132)', width: '100%' ,fontFamily:"DMSansSB",backgroundColor:'white',
+    paddingLeft:25
   },
   rowContainer: {
     flexDirection: 'row',
