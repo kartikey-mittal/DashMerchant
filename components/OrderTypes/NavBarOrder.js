@@ -11,7 +11,7 @@ const NavBarOrder = ({ title, onBackPress, onSecondIconPress, backIconName, seco
                 <TouchableOpacity onPress={onBackPress}>
                     <Icon name={backIconName} size={35} color="white" />
                 </TouchableOpacity>
-                <Text style={{ fontSize: 20, color: 'white', marginLeft: 10 ,fontFamily:"DMSans"}}>{title}</Text>
+                <Text style={{ fontSize: 20, color: 'white', marginLeft: 10 ,fontFamily:"DMSansR"}}>{title}</Text>
             </View>
             <View style={{ flexDirection: 'row' }}>
                 <TouchableOpacity onPress={onSecondIconPress}>

@@ -45,7 +45,7 @@ const CatalogueItemCard = ({ id, title, price, discountPrice, image, weight }) =
      
         <TouchableOpacity onPress={handleEditClick} style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end',position:"relative",bottom:10}}>
           <View style={{ borderRadius: 5, padding: 4, alignItems: 'center',justifyContent:"center", height: 30, borderColor: '#EB8633', borderWidth: 1, width: 60 }}>
-            <Text style={{ color: '#EB8633', fontSize: 14 ,fontFamily:"DMSansB"}}>EDIT</Text>
+            <Text style={{ color: '#EB8633', fontSize: 14 ,fontFamily:"DMSansB"}}>Edit</Text>
           </View>
         </TouchableOpacity>
       
@@ -57,3 +57,5 @@ const CatalogueItemCard = ({ id, title, price, discountPrice, image, weight }) =
 };
 
 export default CatalogueItemCard;
+
+

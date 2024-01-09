@@ -25,10 +25,7 @@ const HomeScreen = () => {
                 </View>
 
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10 }}>
-                    <Card backgroundColor="#fa5a55" iconName="close-circle" rotationDegree={0} title="Rejected Orders" />
-                    <Card backgroundColor="#e3c02c" iconName="check-circle" rotationDegree={0} title="Delivered Orders" />
-                </View>
+              
 
 
 
