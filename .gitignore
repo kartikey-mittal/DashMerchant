@@ -34,3 +34,8 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 node_modules
+<<<<<<< HEAD
+node_modules
+node_modules
+=======
+>>>>>>> 60edbbda0b6c6ddddd384e4a5f8a10043fbaa220
