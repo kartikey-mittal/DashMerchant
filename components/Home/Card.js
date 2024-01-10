@@ -5,7 +5,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontLoader from '../../FontLoader';
 
-const Card = ({ iconName, backgroundColor, rotationDegree, title }) => {
+const Cardtwo = ({ iconName, backgroundColor, rotationDegree, title }) => {
     return (
         <FontLoader>
         <TouchableOpacity>
@@ -41,4 +41,4 @@ const Card = ({ iconName, backgroundColor, rotationDegree, title }) => {
     )
 }
 
-export default Card;
+export default Cardtwo;

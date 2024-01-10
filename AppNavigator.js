@@ -17,6 +17,10 @@ import ShopCategory from './Screens/ShopCategory';
 import ThankYouScreen from './Screens/DetailsSubmitted';
 import ShopDetailstwo from './Screens/ShopDetailstwo';
 import DeliveryLocation from './Screens/DeliveryLocation';
+import StatsScreen from './Screens/StatsScreen';
+import Test from './Screens/Test';
+import DashRecommendCard from './components/Home/DashRecommendCard';
+
 
 const Stack = createStackNavigator();
 
@@ -24,9 +28,12 @@ const AppNavigator = () => {
         return (
       
           <NavigationContainer>
-            <Stack.Navigator initialRouteName="ShopCategory" screenOptions={{ headerShown: false }}>
+            <Stack.Navigator initialRouteName="StatsScreen" screenOptions={{ headerShown: false }}>
               <Stack.Screen name="Home" component={HomeScreen} />
+              <Stack.Screen name="Test" component={Test} />
+              <Stack.Screen name="DashRecommendCard" component={DashRecommendCard} />
               <Stack.Screen name="OrderPage" component={OrderPage} />
+              <Stack.Screen name="StatsScreen" component={StatsScreen} />
               {/* <Stack.Screen name="BottomTabBar" component={BottomTabBar} /> */}
               <Stack.Screen name="Catalogue" component={Catalogue} />
               <Stack.Screen name="EditCatalouge" component={EditCatalouge} />
