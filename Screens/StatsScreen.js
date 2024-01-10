@@ -16,6 +16,7 @@ const StatsScreen = () => {
                                         barStyle="light-content"
                                 />
                         <NavBar/>
+                        <View style={{height:"100%"}}>
                         <View style={{ backgroundColor: '#131927', height: '60%', borderBottomLeftRadius: 30, borderBottomRightRadius: 30, paddingTop: 10, marginBottom: 10 }}>
                         <View style={{ alignItems: 'center' }}>
                 <TotalSaleCard backgroundColor="#66be84" iconName="progress-check" title="Total Sale" iconNametwo="progress-check"/>
@@ -32,12 +33,13 @@ const StatsScreen = () => {
                     <Cardtwo backgroundColor="#e3c02c" iconName="check-circle" rotationDegree={0} title="Best Selling Items" />
                 </View>
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',paddingHorizontal:7,paddingTop:35 }}>
-                <DashRecommendCard backgroundColor="#131927" iconName="arrow-down-circle" rotationDegree={45} title="Dash Recommendations" />
-                </View>
+                
                 
 
-
+                </View>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',paddingHorizontal:10,paddingBottom:80,height:"40%"}}>
+                <DashRecommendCard backgroundColor="#131927" iconName="arrow-down-circle" rotationDegree={45} title="Dash Recommendations" />
+                </View>
             </View>
                 </FontLoader>
         );
