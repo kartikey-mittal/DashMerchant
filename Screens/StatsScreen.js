@@ -1,5 +1,15 @@
-import { View, Text, StatusBar, ScrollView } from "react-native";
-import React from "react";
+import {
+        View,
+        Text,
+        StatusBar,
+        ScrollView,
+        TouchableOpacity,
+        Modal,
+        Pressable
+} from "react-native";
+import React,{useState} from "react";
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 
 import NavBar from "../components/Home/NavBar";
 import FontLoader from "../FontLoader";
@@ -8,7 +18,23 @@ import TotalSaleCard from "../components/Home/TotalSaleCard";
 import DashRecommendCard from "../components/Home/DashRecommendCard";
 import Barchart from "../components/Home/Barchart";
 
+
+
 const StatsScreen = () => {
+
+        const [isModalVisible, setModalVisible] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("Last 6 Months");
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
+  const handleOptionSelect = (option) => {
+    setSelectedOption(option);
+    toggleModal();
+    // Perform any additional actions based on the selected option
+  };
+
         return (
                 <FontLoader>
                         <StatusBar
@@ -87,27 +113,95 @@ const StatsScreen = () => {
                                         </View>
                                 </View>
                                 <View
-                                        style={{
-                                                
-                                                paddingHorizontal: 10,
-                                                paddingBottom: 80,
-                                                height: "45%"
-                                        }}
-                                >
-                                        <DashRecommendCard
-                                                backgroundColor="#131927"
-                                                iconName="arrow-down-circle"
-                                                rotationDegree={45}
-                                                title="Dash Recommendations"
-                                        />
-                                        <View style={{ flex: 1 ,paddingTop:20,paddingBottom:30}}>
-                                                <Text style={{fontSize:18,marginRight:10,fontWeight:'600'}}>Last 6 Months Sale</Text>
-                                                <Barchart />
-                                        </View>
-                                </View>
-                        </ScrollView>
-                </FontLoader>
-        );
+          style={{
+            paddingHorizontal: 10,
+            paddingBottom: 80,
+            height: "45%",
+          }}
+        >
+          <DashRecommendCard
+            backgroundColor="#131927"
+            iconName="arrow-down-circle"
+            rotationDegree={45}
+            title="Dash Recommendations"
+          />
+          {/* Dropdown */}
+          <View
+            style={{
+              flex: 1,
+              paddingTop: 20,
+              paddingBottom: 30,
+            }}
+          >
+            <TouchableOpacity onPress={toggleModal}>
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <Text
+                  style={{
+                    fontSize: 18,
+                    marginRight: 10,
+                    fontWeight: "600",
+                  }}
+                >
+                  {selectedOption}
+                </Text>
+                <Icon
+                  name="arrow-down-drop-circle-outline"
+                  style={{ fontSize: 18, color: "black", marginTop: 5 }}
+                />
+              </View>
+            </TouchableOpacity>
+
+            <Modal
+              animationType="slide"
+              transparent={true}
+              visible={isModalVisible}
+              onRequestClose={toggleModal}
+            >
+              <View
+                style={{
+                  flex: 1,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: "rgba(0,0,0,0.5)",
+                }}
+              >
+                <View
+                  style={{
+                    backgroundColor: "white",
+                    padding: 20,
+                    borderRadius: 10,
+                    elevation: 5,
+                  }}
+                >
+                  <Pressable
+                    onPress={() => handleOptionSelect("Last Month")}
+                    style={{ paddingVertical: 10 }}
+                  >
+                    <Text>Last Month</Text>
+                  </Pressable>
+                  <Pressable
+                    onPress={() => handleOptionSelect("Last 3 Months")}
+                    style={{ paddingVertical: 10 }}
+                  >
+                    <Text>Last 3 Months</Text>
+                  </Pressable>
+                  <Pressable
+                    onPress={() => handleOptionSelect("Last 6 Months")}
+                    style={{ paddingVertical: 10 }}
+                  >
+                    <Text>Last 6 Months</Text>
+                  </Pressable>
+                </View>
+              </View>
+            </Modal>
+
+            {/* Barchart component */}
+            <Barchart />
+          </View>
+        </View>
+      </ScrollView>
+    </FontLoader>
+  );
 };
 
 export default StatsScreen;
