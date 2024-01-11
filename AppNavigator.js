@@ -31,7 +31,7 @@ const AppNavigator = () => {
             <Stack.Navigator initialRouteName="StatsScreen" screenOptions={{ headerShown: false }}>
               <Stack.Screen name="Home" component={HomeScreen} />
               <Stack.Screen name="Test" component={Test} />
-              <Stack.Screen name="DashRecommendCard" component={DashRecommendCard} />
+              
               <Stack.Screen name="OrderPage" component={OrderPage} />
               <Stack.Screen name="StatsScreen" component={StatsScreen} />
               {/* <Stack.Screen name="BottomTabBar" component={BottomTabBar} /> */}

@@ -14,6 +14,7 @@ import EditCatalouge from './EditCatalouge';
 import Cardtwo from '../components/Home/Cardtwo';
 // import TotalSaleCard from '../components/Home/TotalSaleCard';
 import DashRecommendCard from '../components/Home/DashRecommendCard';
+import Barchart from '../components/Home/Barchart';
 
 
 
@@ -25,8 +26,8 @@ const Test = () => {
             {/* <Text>TEST SCREEN</Text> */}
           
             {/* <TotalSaleCard backgroundColor="#66be84" iconName="progress-check" title="Accepted Bag(s)" iconNametwo="progress-check"/> */}
-            <DashRecommendCard backgroundColor="#66be84" iconName="progress-check" title="Accepted Bag(s)" iconNametwo="progress-check"/>
-
+            {/* <DashRecommendCard backgroundColor="#66be84" iconName="progress-check" title="Accepted Bag(s)" iconNametwo="progress-check"/> */}
+<Barchart/>
 
         </View>
     );

@@ -9,9 +9,9 @@ const Card = ({ iconName, backgroundColor, title }) => {
     return (
         <FontLoader>
         <TouchableOpacity>
-            <View style={{ borderRadius: 10, backgroundColor: backgroundColor, height: 105, width: 170, margin: 5, elevation: 5 }}>
+            <View style={{ borderRadius: 10, backgroundColor: backgroundColor, height: 120, width: 170, margin: 5, elevation: 5 }}>
                 {/* First Row */}
-                <View style={{ flex: 0.5, flexDirection: 'row', justifyContent: 'space-between' }}>
+                <View style={{ flex: 0.7, flexDirection: 'row', justifyContent: 'space-between' }}>
                     <View style={{ flex: 0.95, flexDirection: 'column', justifyContent: 'center' }}>
                         <Text style={{ marginLeft: 10, textAlignVertical: 'center', color: 'white',fontFamily:"DMSansR" }}>{title}</Text>
                         <View style={{ marginLeft: 10, marginTop: 5, width: 40, backgroundColor: '#574f4f', height: 1 }}></View>
