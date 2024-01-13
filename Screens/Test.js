@@ -15,6 +15,7 @@ import Cardtwo from '../components/Home/Cardtwo';
 // import TotalSaleCard from '../components/Home/TotalSaleCard';
 import DashRecommendCard from '../components/Home/DashRecommendCard';
 import Barchart from '../components/Home/Barchart';
+import OrderItemCard from '../components/OrderDetails/OrderItemCard';
 
 
 
@@ -27,7 +28,8 @@ const Test = () => {
           
             {/* <TotalSaleCard backgroundColor="#66be84" iconName="progress-check" title="Accepted Bag(s)" iconNametwo="progress-check"/> */}
             {/* <DashRecommendCard backgroundColor="#66be84" iconName="progress-check" title="Accepted Bag(s)" iconNametwo="progress-check"/> */}
-<Barchart/>
+            {/* <Barchart/> */}
+            <OrderItemCard/>
 
         </View>
     );
