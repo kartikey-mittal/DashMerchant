@@ -117,6 +117,8 @@ const DeliveryLocation = () => {
           'Shop-ID': '0',
         }
       )
+
+      navigation.navigate('ThankYouScreen')
       } catch (error) {
         console.error('Error creating document:', error);
         Alert.alert('Error', 'Failed to save details. Please try again.');
