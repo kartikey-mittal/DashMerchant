@@ -1,18 +1,15 @@
 // actions.js
 
-export const setMrp = (mrp) => ({
-        type: 'SET_MRP',
-        payload: mrp,
-      });
-    
-export const setSp = (sp) => ({
-type: 'SET_SP',
-payload: sp,
+export const SET_PHONE_NUMBER = 'SET_PHONE_NUMBER';
+export const SET_SHOP_DETAILS = 'SET_SHOP_DETAILS';
+
+
+export const setPhoneNumber = (phoneNumber) => ({
+  type: SET_PHONE_NUMBER,
+  payload: phoneNumber,
 });
-      
-export const setWeight = (weight) => ({
-type: 'SET_WEIGHT',
-payload: weight,
+
+export const setShopDetails = (shopDetails) => ({
+  type: SET_SHOP_DETAILS,
+  payload: shopDetails,
 });
-           
-      
