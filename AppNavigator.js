@@ -19,7 +19,8 @@ import ShopDetailstwo from './Screens/ShopDetailstwo';
 import DeliveryLocation from './Screens/DeliveryLocation';
 import StatsScreen from './Screens/StatsScreen';
 import Test from './Screens/Test';
-
+import OrdersList from './Screens/OrdersList';
+import SwipedOrder from './Screens/SwipedOrder';
 
 const Stack = createStackNavigator();
 
@@ -27,7 +28,7 @@ const AppNavigator = () => {
         return (
       
           <NavigationContainer>
-            <Stack.Navigator initialRouteName="Test" screenOptions={{ headerShown: false }}>
+            <Stack.Navigator initialRouteName="OrdersList" screenOptions={{ headerShown: false }}>
               <Stack.Screen name="Home" component={HomeScreen} />
               <Stack.Screen name="Test" component={Test} />
               
@@ -46,6 +47,8 @@ const AppNavigator = () => {
               <Stack.Screen name="ThankYouScreen" component={ThankYouScreen} />
               <Stack.Screen name="ShopDetailstwo" component={ShopDetailstwo} />
               <Stack.Screen name="DeliveryLocation" component={DeliveryLocation} />
+              <Stack.Screen name="OrdersList" component={OrdersList} />
+              <Stack.Screen name="SwipedOrder" component={SwipedOrder} />
               
       
           
