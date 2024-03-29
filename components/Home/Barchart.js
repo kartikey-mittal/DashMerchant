@@ -10,10 +10,10 @@ const Barchart = () => {
         
 
         const data = {
-          labels: ['Jan', 'Feb', 'March', 'April', 'May', 'June'],
+          labels: ['Jan', 'Feb', 'March', 'April', 'May', 'June',],
           datasets: [
             {
-              data: [20, 45, 28, 80, 99, 43],
+              data: [33, 45, 28, 80, 99, 43,],
             },
           ],
         };

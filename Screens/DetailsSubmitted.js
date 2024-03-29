@@ -3,8 +3,11 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontLoader from '../FontLoader';
+import { useNavigation } from '@react-navigation/native';
+import { useSelector } from 'react-redux';
 
 const ThankYouScreen = () => {
+  const shopDetails = useSelector((state) => state.login.shopDetails);
   return (
     <FontLoader>
     <View style={styles.container}>
@@ -16,6 +19,7 @@ const ThankYouScreen = () => {
         onPress={() => {
           // Handle button press
           console.log('Button pressed!');
+          console.log(shopDetails);
         }}
         style={styles.chatButton}
       >

@@ -1,15 +1,142 @@
-import React from 'react';
-import { TextInput } from 'react-native';
-import { View, Text, TouchableOpacity } from 'react-native';
+// Importing necessary dependencies
+import React, { useState, useEffect } from 'react';
+import { View, Text, TextInput, TouchableOpacity, StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import FontLoader from '../FontLoader';
+import { Client, Databases, Query,ID } from "appwrite";
+import { useDispatch, useSelector } from 'react-redux';
+import { setShopDetails } from '../redux/actions/actions';
+import { setPhoneNumber } from '../redux/actions/actions';
+import { useNavigation } from '@react-navigation/native';
+import { Alert } from 'react-native';
+// Setting up Appwrite client
+const client = new Client()
+  .setEndpoint('https://cloud.appwrite.io/v1')
+  .setProject('65773c8581b895f83d40');
 
+const databases = new Databases(client);
 
+// HousingCard component to render individual housing cards
+const HousingCard = ({ item, onSelect, isSelected }) => {
+  return (
+    <TouchableOpacity
+      key={item.$id}
+      onPress={() => onSelect(item['Housing-ID'])}
+      style={{
+        width: '100%',
+        backgroundColor: isSelected ? '#3498db' : '#fff',
+        padding: 5,
+        borderRadius: 5,
+        shadowColor: '#000',
+        shadowOpacity: 0.3,
+        shadowRadius: 4,
+        elevation: 1,
+        marginTop: 10,
+      }}
+    >
+      <Text style={{ fontSize: 15, marginBottom: 10, fontFamily: "DMSansSB", color: isSelected ? '#fff' : 'black' }}>{item['Housing-Name']}</Text>
+      <Text style={{ fontSize: 14, color: isSelected ? '#fff' : '#888' }}>{item['Housing-ID']}</Text>
+    </TouchableOpacity>
+  );
+};
+
+// Main DeliveryLocation component
 const DeliveryLocation = () => {
+  const navigation =useNavigation();
+  const [data, setData] = useState([]);
+  const [selectedHousingIDs, setSelectedHousingIDs] = useState([]);
+  const dispatch = useDispatch(); // Redux dispatch function
+  const shopDetails = useSelector(state => state.login.shopDetails); // Access shopDetails from Redux store // Access shopDetails from Redux store
+  const shopPhone= useSelector(state => state.login.storePhoneNo); // Access shopDetails from Redux store // Access shopDetails from Redux store
+  // Fetching data from Appwrite
+
+  const shopCityCode = useSelector(state => state.login.shopDetails.shopCity);
+  console.log(shopCityCode);
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await databases.listDocuments(
+        'data-level-1',
+        'HousingDB',
+        [
+          Query.equal('Housing-CityCode', shopCityCode)
+        ]
+      );
+      setData(res.documents);
+    };
+
+    fetchData();
+  }, []);
+
+  // Handling card selection
+  const handleCardSelect = (housingID) => {
+    const isSelected = selectedHousingIDs.includes(housingID);
+
+    if (isSelected) {
+      // Remove the card from the selection
+      setSelectedHousingIDs(selectedHousingIDs.filter((id) => id !== housingID));
+    } else {
+      // Add the card to the selection
+      setSelectedHousingIDs([...selectedHousingIDs, housingID]);
+    }
+  };
+
+  const handleSaveAndContinue = async () => {
+    // Update the shopDetails object with the selected housing IDs
+    const updatedShopDetails = {
+      ...shopDetails,
+      housingIDs: selectedHousingIDs,
+    };
+
+    // Dispatch the action to save updated shopDetails in the Redux store
+    dispatch(setShopDetails(updatedShopDetails));
+
+    // Handle any additional actions or navigation logic
+    console.log('Save & Continue pressed with selected housing IDs:', selectedHousingIDs);
+    console.log('Updated shopDetails:', updatedShopDetails);
+    console.log(shopDetails.housingIDs);
+    console.log(shopPhone);
+
+
+   try{
+      const response = await databases.createDocument(
+        'data-level-1', // Your database ID
+        'StoresMain-DB', // Your collection ID
+        ID.unique(),
+       
+        {
+          'Mobile-Number': shopPhone,
+          'Shop-Name': shopDetails.shopName,
+          'Shop-Category'	: shopDetails.shopCategory,
+          'Shop-PinCode': shopDetails.shopPinCode,
+          'Shop-WhatsappNo': shopDetails.whatsappNo,
+          'Shop-OpenTime': shopDetails.openTime,
+          'Shop-CloseTime': shopDetails.closeTime,
+          'Shop-TicketSize': shopDetails.ticketSize,
+          'Shop-City': shopDetails.shopCity,
+          'Shop-DeliveryArea': selectedHousingIDs ,// Assuming deliveryArea is a comma-separated string of selected housing IDs
+          'Shop-ID': '0',
+        }
+      )
+
+      navigation.navigate('ThankYouScreen')
+      } catch (error) {
+        console.error('Error creating document:', error);
+        Alert.alert('Error', 'Failed to save details. Please try again.');
+      }
+    
+    // navigation.navigate('ThankYouScreen')
+    // Handle any additional actions or navigation logic
+    // console.log('Save & Continue pressed with selected housing IDs:', selectedHousingIDs);
+    // console.log(shopDetails);
+
+   
+
+  };
+
   return (
     <FontLoader>
-    <View>
-      {/* Updated header with blue background color */}
+      <StatusBar backgroundColor="#3498db" barStyle="light-content" />
+      {/* ... Updated header code ... */}
       <View
         style={{
           flexDirection: 'row',
@@ -17,7 +144,7 @@ const DeliveryLocation = () => {
           padding: 1,
           backgroundColor: '#3498db', // Blue color
           height: '60px',
-          marginTop:35
+          marginTop:0
         }}
       >
         {/* Updated TouchableOpacity with 80% width and centered */}
@@ -43,12 +170,11 @@ const DeliveryLocation = () => {
           }}
         >
           <Text style={{ fontSize: 15, color: 'white', fontWeight: '800' ,fontFamily:"DMSansSB"}}>
-            Select Delivery Location
+          Select your delivery areas
           </Text>
         </TouchableOpacity>
       </View>
 
-      {/* Updated search bar styles */}
       <View style={{ overflow: 'hidden', paddingBottom: 5 }}>
         <View
           style={{
@@ -60,7 +186,7 @@ const DeliveryLocation = () => {
             shadowRadius: 2,
             elevation: 5,
             paddingHorizontal: 10,
-            marginTop:20
+            marginTop: 20,
           }}
         >
           <View
@@ -72,15 +198,42 @@ const DeliveryLocation = () => {
               borderColor: '#858484',
               borderWidth: 1,
               alignItems: 'center',
-             
             }}
           >
             <Icon name="search" size={20} color="black" />
-            <TextInput placeholder="Search for your society" style={{ marginLeft: 10 ,fontFamily:"DMSansSB",width:200}} />
+            <TextInput placeholder="Choose one or more locations" style={{ marginLeft: 10, fontFamily: "DMSansSB", width: 200 }} />
           </View>
         </View>
+
+        {/* Rendering HousingCards */}
+        {data.map((item) => (
+          <HousingCard
+            key={item.$id}
+            item={item}
+            onSelect={handleCardSelect}
+            isSelected={selectedHousingIDs.includes(item['Housing-ID'])}
+          />
+        ))}
+
+        {/* Render Save & Continue button when cards are selected */}
+        {selectedHousingIDs.length > 0 && (
+          <TouchableOpacity
+            style={{
+              backgroundColor: '#007bff',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: 40,
+              width: '70%',
+              borderRadius: 5,
+              marginTop: 20,
+              alignSelf: 'center'
+            }}
+            onPress={handleSaveAndContinue}
+          >
+            <Text style={{ color: '#fff', fontSize: 18, fontFamily: 'DMSansR' }}>Save & Continue</Text>
+          </TouchableOpacity>
+        )}
       </View>
-    </View>
     </FontLoader>
   );
 };

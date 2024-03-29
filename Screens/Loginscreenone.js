@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Image, FlatList, StyleSheet, Dimensions ,TouchableOpacity, ScrollView} from 'react-native';
 import FontLoader from '../FontLoader';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { setPhoneNumber } from '../redux/actions/actions';
+import { useNavigation } from '@react-navigation/native';
 const LoginScreen = () => {
+
+  const dispatch = useDispatch();  
+  const storePhoneNo = useSelector((state) => state.login.storePhoneNo); // Change 'phone' to 'login'
   const [mobileNumber, setMobileNumber] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const imageUrls = [
@@ -12,10 +17,19 @@ const LoginScreen = () => {
     'https://img.freepik.com/premium-photo/portrait-smiling-handsome-young-indian-tailor-using-application-smartphone-when-standing-atelier_274689-20046.jpg?w=360',
     'https://img.freepik.com/free-photo/bicycle-store-manager_1098-21312.jpg?w=360&t=st=1702493405~exp=1702494005~hmac=9e32bec23e717d1d141a8576f216961d403e8fcf091c5f762254212ffd596103'
   ];
+  const navigation = useNavigation(); // Access navigation
+
+  useEffect(() => {
+    console.log('Phone number from Redux store:', storePhoneNo);
+  }, [storePhoneNo]);
+
 
   const handleGetOTP = () => {
     // Handle logic for getting OTP
     console.log('Get OTP for mobile number:', mobileNumber);
+    dispatch(setPhoneNumber(mobileNumber));
+    navigation.navigate('ShopDetails');
+   
   };
 
   const navigateToNextImage = () => {
