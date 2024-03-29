@@ -1,5 +1,6 @@
         import React, { useRef, useState, useEffect } from 'react';
         import { View, Animated, PanResponder, Dimensions, StyleSheet, Text, TouchableOpacity } from 'react-native';
+        import Icon from 'react-native-vector-icons/Ionicons';
 
         const ScreenWidth = Dimensions.get('window').width;
         const RectangleWidth = ScreenWidth - 40; // Adjust the width as needed
@@ -66,9 +67,12 @@
                 <Text style={[styles.buttonText]}>Accept</Text>
                 </TouchableOpacity>
                 <Animated.View
-                style={[styles.circle, { transform: [{ translateX: position.x }, { translateY: position.y }] }]}
-                {...panResponder.panHandlers}
-                />
+          style={[styles.circle, { transform: [{ translateX: position.x }, { translateY: position.y }] }]}
+          {...panResponder.panHandlers}
+        >
+          {/* Material icon inside the circle */}
+          <Icon name="hand-left-outline" size={35} color="white" style={{alignSelf:"center",paddingTop:3}}/>
+        </Animated.View>
                 {orderStatus && (
                 <Text style={styles.text}>{orderStatus}</Text>
                 )}
@@ -83,6 +87,7 @@
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
+        borderRadius: 10,
         },
         rectangle: {
         width: RectangleWidth,
@@ -91,14 +96,18 @@
         borderColor: 'black',
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 20,
+        
         position: 'relative', // Required for absolute positioning of text
+        borderRadius:20,
+        borderWidth:1,
+        borderColor:"grey"
+        
         },
         circle: {
         width: 50,
         height: 50,
         borderRadius: 25,
-        backgroundColor: 'black',
+        backgroundColor: '#56D770',
         position: 'absolute',
         left: '50%',
         marginLeft: -25,
@@ -112,6 +121,7 @@
         width: '30%',
         height: '100%',
         backgroundColor: 'blue',
+        borderRadius:20
         },
         buttonText: {
         color: 'white',

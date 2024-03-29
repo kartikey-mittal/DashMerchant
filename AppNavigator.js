@@ -28,11 +28,7 @@ const AppNavigator = () => {
         return (
       
           <NavigationContainer>
-<<<<<<< HEAD
-            <Stack.Navigator initialRouteName="OrdersList" screenOptions={{ headerShown: false }}>
-=======
-            <Stack.Navigator initialRouteName="DeliveryLocation" screenOptions={{ headerShown: false }}>
->>>>>>> 786a6b7d1f06aa80d2e76c594cfc6f39b94484da
+            <Stack.Navigator initialRouteName="SwipedOrder" screenOptions={{ headerShown: false }}>
               <Stack.Screen name="Home" component={HomeScreen} />
               <Stack.Screen name="Test" component={Test} />
               
