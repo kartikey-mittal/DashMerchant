@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -35,7 +37,7 @@ const OrderItemCard = () => {
         <Image source={{ uri: 'https://i5.walmartimages.com/asr/71e5349f-831e-4f1d-8987-59e35ac188e9_1.626a9554f4d4bb6d0560a39265ce80ba.jpeg' }} style={{ width: '100%', height: '90%', resizeMode: 'contain' ,borderWidth:2}} />
       </View>
       <View style={{ flex: 1, marginLeft: 25 }}>
-        <Text style={{ fontSize: 15, fontWeight: '500',fontFamily:"DMSansSB" }}>Mountain Dew Dar ki maa ki chuu</Text>
+        <Text style={{ fontSize: 15, fontWeight: '500',fontFamily:"DMSansSB" }}>Mountain Dew </Text>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <Text style={{ fontSize: 16, color: 'black', marginTop: 9,fontFamily:"DMSansSB" }}>23/-</Text>
           <Text style={{ fontSize: 15, color: '#a9a9a9', textDecorationLine: 'line-through',marginTop: 9, marginLeft: 5,fontFamily:"DMSansR" }}>11</Text>

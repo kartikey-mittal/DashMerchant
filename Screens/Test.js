@@ -16,6 +16,8 @@ import Cardtwo from '../components/Home/Cardtwo';
 import DashRecommendCard from '../components/Home/DashRecommendCard';
 import Barchart from '../components/Home/Barchart';
 import OrderItemCard from '../components/OrderDetails/OrderItemCard';
+import OrderItemCardMain from '../components/OrderDetails/OrderItemCardMain';
+import ShopBar from '../components/OrderDetails/ShopBar';
 
 
 
@@ -29,7 +31,9 @@ const Test = () => {
             {/* <TotalSaleCard backgroundColor="#66be84" iconName="progress-check" title="Accepted Bag(s)" iconNametwo="progress-check"/> */}
             {/* <DashRecommendCard backgroundColor="#66be84" iconName="progress-check" title="Accepted Bag(s)" iconNametwo="progress-check"/> */}
             {/* <Barchart/> */}
-            <OrderItemCard/>
+            {/* <OrderItemCard/> */}
+            <OrderItemCardMain/>
+            {/* <ShopBar/> */}
 
         </View>
     );

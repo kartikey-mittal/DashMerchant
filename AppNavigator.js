@@ -28,7 +28,7 @@ const AppNavigator = () => {
         return (
       
           <NavigationContainer>
-            <Stack.Navigator initialRouteName="SwipedOrder" screenOptions={{ headerShown: false }}>
+            <Stack.Navigator initialRouteName="Test" screenOptions={{ headerShown: false }}>
               <Stack.Screen name="Home" component={HomeScreen} />
               <Stack.Screen name="Test" component={Test} />
               
