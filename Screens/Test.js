@@ -16,8 +16,8 @@ import Cardtwo from '../components/Home/Cardtwo';
 import DashRecommendCard from '../components/Home/DashRecommendCard';
 import Barchart from '../components/Home/Barchart';
 import OrderItemCard from '../components/OrderDetails/OrderItemCard';
-import OrderItemCardMain from '../components/OrderDetails/OrderItemCardMain';
-import ShopBar from '../components/OrderDetails/ShopBar';
+import SlidableScreen from '../components/OrderDetails/SlidableScreen';
+import GlobalSearchScreen from '../components/OrderDetails/GlobalSearchScreen';
 
 
 
@@ -32,8 +32,8 @@ const Test = () => {
             {/* <DashRecommendCard backgroundColor="#66be84" iconName="progress-check" title="Accepted Bag(s)" iconNametwo="progress-check"/> */}
             {/* <Barchart/> */}
             {/* <OrderItemCard/> */}
-            <OrderItemCardMain/>
-            {/* <ShopBar/> */}
+            {/* <OrderItemCardMain/> */}
+            <GlobalSearchScreen/>
 
         </View>
     );

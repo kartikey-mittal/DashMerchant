@@ -4,29 +4,20 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import FontLoader from '../../FontLoader';
 
-const CustomCheckbox = ({ checked, onToggle }) => {
-  return (
-    <TouchableOpacity onPress={onToggle}>
-      {/* Use the 'check-box' icon when checked, 'check-box-outline-blank' otherwise */}
-      <Icon name={checked ? 'check-box' : 'check-box-outline-blank'} size={25} color="black" />
-    </TouchableOpacity>
-  );
-};
 
-const OrderItemCard = () => {
-  const [isChecked, setIsChecked] = useState(false);
 
-  const toggleCheckbox = () => {
-    setIsChecked(!isChecked);
-  };
+const OrderItemCardMain = ({ onAddButtonClick }) => {
+ 
   
   const handlePress = () => {
+    onAddButtonClick();
+
     console.log("button pressed");
   };
 
   return (
     <FontLoader>
-      <View style={{ flexDirection: 'row', backgroundColor: 'white', borderRadius: 10, padding: 10, marginHorizontal: 10, marginVertical: 50, borderColor: '#989BA4', borderWidth: 0.5 ,justifyContent:"space-between",alignItems:"center"}}>
+      <View style={{ flexDirection: 'row', backgroundColor: 'white', borderRadius: 10, padding: 10, marginHorizontal: 10, marginVertical: 0, borderColor: '#989BA4', borderWidth: 0.5 ,justifyContent:"space-between",alignItems:"center",marginTop:40}}>
         <View style={{ backgroundColor: 'rgba(0, 0, 0, 0)', width: 100, height: 100, alignSelf: 'center', justifyContent: 'center', alignItems: 'center' }}>
           <Image source={{ uri: 'https://i5.walmartimages.com/asr/71e5349f-831e-4f1d-8987-59e35ac188e9_1.626a9554f4d4bb6d0560a39265ce80ba.jpeg' }} style={{ width: '100%', height: '90%', resizeMode: 'contain' ,borderWidth:2}} />
         </View>
@@ -54,4 +45,4 @@ const OrderItemCard = () => {
   );
 };
 
-export default OrderItemCard;
+export default OrderItemCardMain;
