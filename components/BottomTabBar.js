@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         borderColor: '#ddd',
         position: 'absolute',
         bottom: 0,
-        width: '100%',
+        width: '100%',backgroundColor:'white',elevation:50
     },
 });
 

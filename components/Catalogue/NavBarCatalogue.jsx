@@ -6,12 +6,12 @@ import FontLoader from '../../FontLoader';
 const NavBarCatalogue = ({ storeName }) => {
     return (
         <FontLoader>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 10, backgroundColor: '#131927',height:60 }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 5, backgroundColor: "#000125",paddingVertical:8}}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <TouchableOpacity onPress={() => { }}>
                     <Icon name="chevron-back-outline" size={25} color="white" />
                 </TouchableOpacity>
-                <Text style={{ fontSize: 20, color: 'white', marginLeft: 10 ,fontFamily:"DMSansR"}}>{storeName}</Text>
+                <Text style={{ fontSize: 18, color: 'white', marginLeft: 10 ,fontFamily:"DMSansSB"}}>{storeName}</Text>
             </View>
             <View style={{ flexDirection: 'row' }}>
                 <TouchableOpacity onPress={() => { }}>

@@ -22,10 +22,10 @@ const CustomSwitch = () => {
 
   return (
     <FontLoader>
-    <TouchableOpacity onPress={handleToggle} style={{ flexDirection: 'row', width: 120, height: 40, borderRadius: 25, backgroundColor: backgroundColorInterpolation, justifyContent: 'center', alignItems: 'center' }}>
+    <TouchableOpacity onPress={handleToggle} style={{ flexDirection: 'row', width: 120, height: 35, borderRadius: 25, backgroundColor: backgroundColorInterpolation, justifyContent: 'center', alignItems: 'center' }}>
       <Animated.Text style={{ position: 'absolute', left: 10, opacity: animatedValue, fontSize: 14, fontWeight: '500', color: 'white',fontFamily:"DMSansR" }}>{'ONLINE'}</Animated.Text>
-      <Animated.View style={{ transform: [{ translateX: animatedValue.interpolate({ inputRange: [0, 1], outputRange: [-36, 36] }) }] }}>
-        <View style={{ width: 45, height: 45, borderRadius: 25, backgroundColor: 'white' }} />
+      <Animated.View style={{ transform: [{ translateX: animatedValue.interpolate({ inputRange: [0, 1], outputRange: [-39, 39] }) }] }}>
+        <View style={{ width: 40, height: 40, borderRadius: 25, backgroundColor: 'white' }} />
       </Animated.View>
       <Animated.Text style={{ position: 'absolute', right: 10, opacity: animatedValue.interpolate({ inputRange: [0, 1], outputRange: [1, 0] }), fontSize: 14, fontWeight: '500', color: 'white' ,fontFamily:"DMSansR"}}>{'OFFLINE'}</Animated.Text>
     </TouchableOpacity>

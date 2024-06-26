@@ -83,7 +83,7 @@ const [items, setItems] = useState([]);
     return (
       <FontLoader>
         <SafeAreaView style={{ flex: 1,backgroundColor:'#f2f2f2' }}>
-            <StatusBar backgroundColor="#131927" barStyle="light-content" />
+            <StatusBar backgroundColor="#000125" barStyle="light-content" />
             
             <NavBarCatalogue storeName="Bigbasket" />
             <SearchBarCatalogue/>

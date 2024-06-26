@@ -1,14 +1,8 @@
-import React, { View } from "react";
-import AppNavigator from "./AppNavigator";
-// import BottomTabBar from "./components/BottomTabBar";
+import React from 'react';
+import AppNavigator from './AppNavigator';
 
 const MainContainer = () => {
-        return (
-                <>
-                        <AppNavigator />
-                        {/* <BottomTabBar /> */}
-                </>
-        );
+    return <AppNavigator />;
 };
 
 export default MainContainer;

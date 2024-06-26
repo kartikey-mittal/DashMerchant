@@ -8,7 +8,7 @@ import FontLoader from '../../FontLoader';
 const OrderNavBar = ({title}) => {
     return (
         <FontLoader>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 10, backgroundColor: '#131927',height:60 }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 10, backgroundColor: '#000125',}}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <TouchableOpacity onPress={() => { }}>
                     <Icon name="chevron-back-outline" size={25} color="white" />

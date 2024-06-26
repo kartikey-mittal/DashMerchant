@@ -1,15 +1,14 @@
 import {
-        View,
-        Text,
-        StatusBar,
-        ScrollView,
-        TouchableOpacity,
-        Modal,
-        Pressable
+  View,
+  Text,
+  StatusBar,
+  ScrollView,
+  TouchableOpacity,
+  Modal,
+  Pressable,
 } from "react-native";
-import React,{useState} from "react";
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import React, { useState } from "react";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 import NavBar from "../components/Home/NavBar";
 import FontLoader from "../FontLoader";
@@ -17,12 +16,10 @@ import Cardtwo from "../components/Home/Cardtwo";
 import TotalSaleCard from "../components/Home/TotalSaleCard";
 import DashRecommendCard from "../components/Home/DashRecommendCard";
 import Barchart from "../components/Home/Barchart";
-
-
+import BottomTabBar from "../components/BottomTabBar";
 
 const StatsScreen = () => {
-
-        const [isModalVisible, setModalVisible] = useState(false);
+  const [isModalVisible, setModalVisible] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Last 6 Months");
 
   const toggleModal = () => {
@@ -35,96 +32,106 @@ const StatsScreen = () => {
     // Perform any additional actions based on the selected option
   };
 
-        return (
-                <FontLoader>
-                        <StatusBar
-                                backgroundColor="#131927"
-                                barStyle="light-content"
-                        />
-                        <NavBar />
-                        <ScrollView
-                                style={{ height: "100%" }}
-                                showsVerticalScrollIndicator={false}
-                        >
-                                <View
-                                        style={{
-                                                backgroundColor: "#131927",
-                                                height: "52%",
-                                                borderBottomLeftRadius: 30,
-                                                borderBottomRightRadius: 30,
-                                                paddingTop: 10,
-                                                marginBottom: 10,
-                                        }}
-                                >
-                                        <View style={{ alignItems: "center" }}>
-                                                <TotalSaleCard
-                                                        backgroundColor="#66be84"
-                                                        iconName="progress-check"
-                                                        title="Total Sale"
-                                                        iconNametwo="progress-check"
-                                                />
-                                        </View>
-                                        <View
-                                                style={{
-                                                        flexDirection: "row",
-                                                        justifyContent:
-                                                                "space-between",
-                                                        alignItems: "center",
-                                                        paddingHorizontal: 10,
-                                                        paddingVertical: 10,
-                                                }}
-                                        >
-                                                <Cardtwo
-                                                        backgroundColor="#e68943"
-                                                        iconName="arrow-down-circle"
-                                                        rotationDegree={45}
-                                                        title="Average Order Value"
-                                                />
-                                                <Cardtwo
-                                                        backgroundColor="#66be84"
-                                                        iconName="progress-check"
-                                                        rotationDegree={0}
-                                                        title="Minimum Order Value"
-                                                />
-                                        </View>
+  return (
+    <FontLoader>
+      <StatusBar backgroundColor="#000125" barStyle="light-content" />
+      <NavBar />
+      <View style={{height:'100%',backgroundColor:'#e7ecef'}}>
 
-                                        <View
-                                                style={{
-                                                        flexDirection: "row",
-                                                        justifyContent:
-                                                                "space-between",
-                                                        alignItems: "center",
-                                                        marginTop: 10,
-                                                        paddingHorizontal: 10,
-                                                }}
-                                        >
-                                                <Cardtwo
-                                                        backgroundColor="#fa5a55"
-                                                        iconName="close-circle"
-                                                        rotationDegree={0}
-                                                        title="Total Number of Products"
-                                                />
-                                                <Cardtwo
-                                                        backgroundColor="#e3c02c"
-                                                        iconName="check-circle"
-                                                        rotationDegree={0}
-                                                        title="Best Selling Items"
-                                                />
-                                        </View>
-                                </View>
-                                <View
+     
+      <ScrollView
+        style={{flex:1,backgroundColor:'#f3f4f6'}}
+        showsVerticalScrollIndicator={false}
+      >
+        <View
+          style={{
+            backgroundColor: "#000125",
+           
+            borderBottomLeftRadius: 30,
+            borderBottomRightRadius: 30,
+            paddingTop: 10,
+         paddingBottom:50,paddingTop:15
+          }}
+        >
+          <View style={{ alignItems: "center",backgroundColor:'#000125',paddingBottom:20 }}>
+            <TotalSaleCard
+              backgroundColor="#2d3683"
+              iconName="money-bill-transfer"
+              title="Total Sale"
+              iconNametwo="angles-up"
+            />
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              // justifyContent: "space-between",
+              alignItems: "center",
+              paddingHorizontal: 5,
+              paddingVertical: 5,
+            }}
+          >
+            <Cardtwo
+              backgroundColor="#316bdf"
+              iconName="arrow-down-circle"
+              rotationDegree={45}
+              title="Average Order Value"
+              textBg="#2756b2" 
+              mainText='2' 
+              subTitle="600"
+            />
+            <Cardtwo
+              backgroundColor="#f86d46"
+              iconName="progress-check"
+              rotationDegree={0}
+              title="Minimum Order Value"
+              textBg="#c65738" 
+              mainText='2' 
+              subTitle="600"
+            />
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginTop: 0,
+              paddingHorizontal: 5,
+            }}
+          >
+            <Cardtwo
+              backgroundColor="#35a99a"
+              iconName="close-circle"
+              rotationDegree={0}
+              title="Total Products"
+              textBg="#2a877b" 
+              mainText='2' 
+              subTitle="600"
+            />
+            <Cardtwo
+              backgroundColor="#8bcb41"
+              iconName="close-circle"
+              rotationDegree={0}
+              title="New Customer"
+              textBg="#6fa234" 
+              mainText='2' 
+              subTitle="600"
+            />
+          </View>
+        </View>
+        <View
           style={{
             paddingHorizontal: 10,
             paddingBottom: 80,
-            height: "45%",
+            // height: "45%",
           }}
         >
-          <DashRecommendCard
+          {/* <DashRecommendCard
             backgroundColor="#131927"
-            iconName="arrow-down-circle"
-            rotationDegree={45}
+            iconName="recommend"
+            rotationDegree={0}
             title="Dash Recommendations"
-          />
+          /> */}
           {/* Dropdown */}
           <View
             style={{
@@ -139,7 +146,7 @@ const StatsScreen = () => {
                   style={{
                     fontSize: 18,
                     marginRight: 10,
-                    fontWeight: "600",
+                    fontFamily:'DMSansSB'
                   }}
                 >
                   {selectedOption}
@@ -189,7 +196,7 @@ const StatsScreen = () => {
                     onPress={() => handleOptionSelect("Last 6 Months")}
                     style={{ paddingVertical: 10 }}
                   >
-                    <Text>Last 6 Months</Text>
+                    <Text style={{fontFamily:'DMSansSB'}}>Last 6 Months</Text>
                   </Pressable>
                 </View>
               </View>
@@ -199,7 +206,9 @@ const StatsScreen = () => {
             <Barchart />
           </View>
         </View>
+      
       </ScrollView>
+      </View>
     </FontLoader>
   );
 };

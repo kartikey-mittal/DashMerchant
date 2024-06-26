@@ -29,7 +29,7 @@ const OrderScreen = () => {
                                 style={{ flex: 1, backgroundColor: "#f2f2f2" }}
                         >
                                 <StatusBar
-                                        backgroundColor="#131927"
+                                        backgroundColor="#000125"
                                         barStyle="light-content"
                                 />
 
@@ -39,7 +39,7 @@ const OrderScreen = () => {
                                 <View
                                         style={{
                                                 flexDirection: "row",
-                                                backgroundColor: "#131927",
+                                                backgroundColor: "#000125",
                                                 borderBottomWidth: 0.8,
                                                 borderColor: "blue",
                                         }}
