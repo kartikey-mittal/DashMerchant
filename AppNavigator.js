@@ -28,6 +28,7 @@ import StoreScreen1 from './Screens/StoreScreen1';
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
+<<<<<<< HEAD
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Store" screenOptions={{ headerShown: false }}>
@@ -62,6 +63,36 @@ const AppNavigator = () => {
                 <Stack.Screen name="SwipedOrder" component={SwipedOrder} />
                 <Stack.Screen name="Test" component={Test} />
                 <Stack.Screen name="Store" component={StoreScreen1} />
+=======
+        return (
+      
+          <NavigationContainer>
+            <Stack.Navigator initialRouteName="Test" screenOptions={{ headerShown: false }}>
+              <Stack.Screen name="Home" component={HomeScreen} />
+              <Stack.Screen name="Test" component={Test} />
+              
+              <Stack.Screen name="OrderPage" component={OrderPage} />
+              <Stack.Screen name="StatsScreen" component={StatsScreen} />
+              <Stack.Screen name="BottomTabBar" component={BottomTabBar} />
+              <Stack.Screen name="Catalogue" component={Catalogue} />
+              <Stack.Screen name="EditCatalouge" component={EditCatalouge} />
+              <Stack.Screen name="Support" component={Support} />
+              <Stack.Screen name="NewOrderScreen" component={NewOrderScreen} />
+              <Stack.Screen name="OrderScreen" component={OrderScreen} />
+              <Stack.Screen name="LoginScreen" component={LoginScreen} />
+              <Stack.Screen name="LoginscreenTwo" component={LoginscreenTwo} />
+              <Stack.Screen name="ShopDetails" component={ShopDetails} />
+              <Stack.Screen name="ShopCategory" component={ShopCategory} />
+              <Stack.Screen name="ThankYouScreen" component={ThankYouScreen} />
+              <Stack.Screen name="ShopDetailstwo" component={ShopDetailstwo} />
+              <Stack.Screen name="DeliveryLocation" component={DeliveryLocation} />
+              <Stack.Screen name="OrdersList" component={OrdersList} />
+              <Stack.Screen name="SwipedOrder" component={SwipedOrder} />
+              
+      
+          
+      
+>>>>>>> 7e9b85e15e451e0b0aecea93796fc53878de8de3
             </Stack.Navigator>
         </NavigationContainer>
     );

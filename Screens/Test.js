@@ -1,22 +1,42 @@
 import React, { useEffect } from 'react';
 import { View, StyleSheet, Text,Image,TouchableOpacity,TextInput } from 'react-native';
 import OrderItemCard from '../components/OrderDetails/OrderItemCard';
+<<<<<<< HEAD
 import { Client } from 'appwrite';
 import storage from 'local-storage-fallback';
 import FontLoader from '../FontLoader';
 if (!('localStorage' in window)) {
     window.localStorage = storage;
   }
+=======
+import SlidableScreen from '../components/OrderDetails/SlidableScreen';
+import GlobalSearchScreen from '../components/OrderDetails/GlobalSearchScreen';
+
+
+
+
+>>>>>>> 7e9b85e15e451e0b0aecea93796fc53878de8de3
 const Test = () => {
   useEffect(() => {
     const client = new Client()
       .setEndpoint('https://cloud.appwrite.io/v1')
       .setProject('65773c8581b895f83d40');
 
+<<<<<<< HEAD
     // Subscribe to changes in the specific document
     const unsubscribe = client.subscribe('databases.data-level-1.collections.StoresDB.documents.657d6d2698af7c836c74', response => {
       console.log('Realtime payload:', response.payload);
     });
+=======
+            {/* <Text>TEST SCREEN</Text> */}
+          
+            {/* <TotalSaleCard backgroundColor="#66be84" iconName="progress-check" title="Accepted Bag(s)" iconNametwo="progress-check"/> */}
+            {/* <DashRecommendCard backgroundColor="#66be84" iconName="progress-check" title="Accepted Bag(s)" iconNametwo="progress-check"/> */}
+            {/* <Barchart/> */}
+            {/* <OrderItemCard/> */}
+            {/* <OrderItemCardMain/> */}
+            <GlobalSearchScreen/>
+>>>>>>> 7e9b85e15e451e0b0aecea93796fc53878de8de3
 
     // Clean up the subscription on unmount
     return () => {
